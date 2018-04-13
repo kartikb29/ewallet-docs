@@ -321,11 +321,17 @@
 Please note that this is a beta version of the Wallet API which is still undergoing final testing before its official release. 
 </aside>
 <h1 id='authentication'>Authentication</h1>
-<p>Wallet uses API key to allow access to the API. You can request a new  API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Wallet uses API key to allow access to the API. You can request a new  API key at our <a href="#">developer portal</a>.</p>
 
-<p>The API key needs to be included in all API requests to the server in a header that looks like the following:</p>
+<p>The API Key and Merchant ID needs to be included in the request body for all API requests. </p>
+
+<p>Alternatively you can also do the following ,  </p>
+
+<p>The API key needs to be included for all API requests to the server in a header that looks like the following:</p>
 
 <p><code>API-KEY: 04af606c-38a3-11e8-b467-0ed5f89f718b</code></p>
+
+<p>along with the Merchant ID.</p>
 
 <aside class="notice">
 You must replace <code>04af606c-38a3-11e8-b467-0ed5f89f718b</code> with your personal API key.
@@ -542,6 +548,11 @@ There are few endpoints that does not need API key to be included in request.
 <td>1123</td>
 <td>400</td>
 <td>API Key is invalid</td>
+</tr>
+<tr>
+<td>1124</td>
+<td>400</td>
+<td>OTP Expired</td>
 </tr>
 </tbody></table>
 <h1 id='versioning'>Versioning</h1>
@@ -1327,6 +1338,10 @@ Once you get the otp, resend the request again with otp parameter set.</p>
 <td></td>
 </tr>
 </tbody></table>
+
+<aside class="notice">
+The <code>OTP code</code> is set to expire after 10 minutes.
+</aside>
 <h1 id='endpoints-general'>Endpoints - General</h1><h2 id='get-xdc-price'>Get XDC Price</h2>
 <p>Get today&#39;s xdc price.</p>
 <h3 id='http-request-14'>HTTP Request</h3>
